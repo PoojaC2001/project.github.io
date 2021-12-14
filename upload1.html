@@ -1,0 +1,16 @@
+<html>
+    <head>
+        </head>
+        <body>
+            <input type="file" name="fileupload" id="fileupload">
+            <button id="btn" onclick="uploadfile()">Upload</button>
+            <script type="text/css">
+                async function uploadfile(){
+                    let formData=new FormData();
+                    formData.append("file",fileupload.files[0]);
+                   await fetch('/upload2.php', {method:"POST", body: formData});
+                    alert("The file has been uploaded successfully");
+                }
+            </script>
+            </body>
+</html>
